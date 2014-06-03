@@ -62,6 +62,9 @@ if (Meteor.isClient) {
     },
     todosPlural: function() {
       return Todos.find({completed: false}).count() == 1 ? '' : 's';
+    },
+    todoAttributes: function() {
+      return this.completed ? {checked: true} : {};
     }
   });
 

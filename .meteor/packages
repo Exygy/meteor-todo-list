@@ -5,6 +5,5 @@
 
 standard-app-packages
 autopublish
-preserve-inputs
 insecure
 bootstrap

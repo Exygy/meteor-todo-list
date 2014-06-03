@@ -28,7 +28,7 @@
     {{#each todos}}
       <li class="todo {{#if completed}}completed{{/if}}">
         {{title}}
-        <input type="checkbox" class="todo-done" {{#if completed}}checked{{/if}} />
+        <input type="checkbox" class="todo-done" {{todoAttributes}} />
       </li>
     {{/each}}
     </ul>
