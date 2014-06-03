@@ -1,0 +1,36 @@
+<head>
+  <title>Todos</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Things To Do:</h1>
+    {{> todo_input}}
+    {{> todo_list}}
+  </div>
+</body>
+
+<template name="todo_input">
+  <form class="form-inline">
+    <input type="text" class="todo-add" placeholder="To do:" />
+    <button type="submit" class="btn btn-default">Add</button>
+  </form>
+  <a class="btn btn-danger clear">Clear completed</a>
+</template>
+
+<template name="todo_list">
+  <div class="todo-list">
+    <h2>{{todosCount}} things to do.</h2>
+    {{#unless todosCount}}
+      <p>Why don't you add something?</p>
+    {{/unless}}
+    <ul class="todos">
+    {{#each todos}}
+      <li class="todo {{#if completed}}completed{{/if}}">
+        {{title}}
+        <input type="checkbox" class="todo-done" {{#if completed}}checked{{/if}} />
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+</template>
